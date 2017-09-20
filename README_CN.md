@@ -599,7 +599,8 @@ http://k8s-master1:30000
 * 在k8s-master1上允许在master上部署pod，否则heapster会无法部署
 
 ```
-$ kubectl taint nodes --all node-role.kubernetes.io/master-node "k8s-master1" tainted
+$ kubectl taint nodes --all node-role.kubernetes.io/master-
+node "k8s-master1" tainted
 ```
 
 * 在k8s-master1上安装heapster组件，监控性能
