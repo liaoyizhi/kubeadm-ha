@@ -916,6 +916,10 @@ $ ping 192.168.60.80
 
 ```
 $ vi /root/kubeadm-ha/nginx-default.conf
+events {
+    use                 epoll;
+    worker_connections  65535;
+}
 stream {
     upstream apiserver {
         server ${HOST_IP}:6443 weight=5 max_fails=3 fail_timeout=30s;
